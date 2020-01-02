@@ -1,0 +1,3 @@
+add_executable(hack_jthread_test hack_jthread_test.cpp)
+target_link_libraries(hack_jthread_test PRIVATE Catch2::Catch2 hack_jthread)
+add_test(all_tests_in_jthread_tests hack_jthread_test)

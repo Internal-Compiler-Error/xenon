@@ -1,8 +1,9 @@
 enable_testing()
 
+
 #add_executable(gui_test gui_test.cpp)
 add_executable(network_test network_test.cpp)
-add_executable(hack_jthread_test hack_jthread_test.cpp)
+add_executable(hack_jthread_test misc/hack_jthread_test.cpp)
 
 find_package(Catch2 CONFIG REQUIRED)
 #target_link_libraries(gui_test PRIVATE Catch2::Catch2 gui)
