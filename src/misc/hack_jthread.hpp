@@ -7,18 +7,15 @@
 
 #include <thread>
 
-namespace xenon::misc
-{
-struct hack_jthread : public std::thread
-{
+namespace xenon::misc {
+struct hack_jthread : public std::thread {
     using std::thread::thread;
-    hack_jthread(std::thread&&) noexcept = delete;
-    hack_jthread& operator=(std::thread&&) noexcept = delete;
-    hack_jthread(hack_jthread&&) noexcept  = default;
-    hack_jthread& operator=(hack_jthread&&) noexcept = default;
+    hack_jthread(std::thread &&) noexcept = delete;
+    hack_jthread &operator=(std::thread &&) noexcept = delete;
+    hack_jthread(hack_jthread &&) noexcept = default;
+    hack_jthread &operator=(hack_jthread &&) noexcept = default;
     ~hack_jthread();
 };
-}    // namespace xenon::misc
+} // namespace xenon::misc
 
-
-#endif    // XENON_HACK_JTHREAD_HPP
+#endif // XENON_HACK_JTHREAD_HPP

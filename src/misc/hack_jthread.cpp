@@ -3,10 +3,8 @@
 //
 
 #include "hack_jthread.hpp"
-xenon::misc::hack_jthread::~hack_jthread()
-{
-    if (joinable())
-    {
+xenon::misc::hack_jthread::~hack_jthread() {
+    if (joinable()) {
         join();
     }
 }

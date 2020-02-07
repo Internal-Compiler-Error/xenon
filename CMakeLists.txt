@@ -1,19 +1,17 @@
 cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 project(xenon VERSION 0.1 LANGUAGES CXX)
-enable_testing()
 
+option(XENON_ENABLE_TEST ON)
+option(CMAKE_VERBOSE_MAKEFILE OFF)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS FALSE)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-set(CMAKE_VERBOSE_MAKEFILE FALSE)
-
-
 add_subdirectory(extern)
 add_subdirectory(src)
 
-
-add_subdirectory(test)
-
-
+if (XENON_ENABLE_TEST)
+    enable_testing()
+    add_subdirectory(test)
+endif ()
