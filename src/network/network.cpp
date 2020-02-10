@@ -2,12 +2,12 @@
 
 #include <httplib.h>
 
-#include <utility>
 #include <gui/window.hpp>
+#include <utility>
 
 using namespace httplib;
-
-std::pair<bool, std::shared_ptr<httplib::Response>> xenon::network::can_be_accelerated(skyr::url const &url) {
+using httplib_response_t = std::shared_ptr<httplib::Response>;
+std::pair<bool, httplib_response_t> xenon::network::can_be_accelerated(skyr::url const &url) {
     Client client{url.host()};
 
     client.set_follow_location(true);
@@ -139,6 +139,7 @@ void xenon::network::download_scheduler::main_loop() {
     }
 }
 xenon::network::download_scheduler::download_scheduler(xenon::gui::window *window) : window_{window} {}
+
 void xenon::network::download_scheduler::add_download(httplib::Response const &response, skyr::url request_url) {
     download_queue_.emplace_back(download_index_++, response, std::move(request_url));
     window_->notify(gui::event::new_download_created);

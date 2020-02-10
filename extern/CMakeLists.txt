@@ -10,3 +10,6 @@ endif ()
 # below is all the git submodules live
 add_subdirectory(url)
 add_subdirectory(httplib-cheat)
+
+find_package(Catch2 CONFIG REQUIRED)
+set_target_properties(Catch2::Catch2 PROPERTIES IMPORTED_GLOBAL TRUE)

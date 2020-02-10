@@ -1,8 +1,7 @@
-#define CATCH_CONFIG_MAIN
-#include "../src/network/network.hpp"
+#include <network/network.hpp>
 #include <catch2/catch.hpp>
 
-auto url = skyr::url{"https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/"
+auto const url = skyr::url{"https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/"
                      "Fedora-Workstation-Live-x86_64-31-1.9.iso"};
 
 TEST_CASE("subdownload name is correct")

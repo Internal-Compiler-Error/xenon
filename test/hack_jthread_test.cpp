@@ -1,7 +1,6 @@
-#define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 #include <chrono>
-#include <hack_jthread.hpp>
+#include <misc/hack_jthread.hpp>
 #include <thread>
 
 TEST_CASE("Hack jthreads behave like an automatically joining thread")
