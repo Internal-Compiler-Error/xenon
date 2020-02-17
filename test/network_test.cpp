@@ -23,7 +23,7 @@ TEST_CASE("Get final location works")
     REQUIRE_NOTHROW(xenon::network::get_final_location(url));
 }
 
-TEST_CASE("fuck")
+TEST_CASE("deprecated test")
 {
     auto [success, response]       = xenon::network::can_be_accelerated(url);
     auto            final_location = xenon::network::get_final_location(url);
